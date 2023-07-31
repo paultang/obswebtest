@@ -4,7 +4,7 @@
 </head>
 <body>
     <!-- 用于OBS展示的目标图片 -->
-    <img src="f.png" id="obsImage">
+    <img src="f.png" id="selectedImage">
 
     <!-- 点击其他图片触发切换目标图片 -->
     <img src="d.png" id="image1" onclick="changeImage('image1')">
@@ -13,7 +13,7 @@
 <script>
     function changeImage(imageId) {
         // 获取OBS展示的目标图片元素
-        const obsImageElement = document.getElementById('obsImage');
+        const obsImageElement = document.getElementById('selectedImage');
 
         // 获取点击的图片元素
         const clickedImageElement = document.getElementById(imageId);
