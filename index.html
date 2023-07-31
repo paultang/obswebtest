@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-	<meta http-equiv='origin-trial' content='ArcEc1taNHMu4hv4uJ0EqaaarH4y4amJM0PAuYQbWz8jQ7PKsDlfqI60XiQEtUGC6rPyIX0a/w9bErcnW28RDgsAAABReyJvcmlnaW4iOiJodHRwczovL29icy13ZWIubmllay50djo0NDMiLCJmZWF0dXJlIjoiV2FrZUxvY2siLCJleHBpcnkiOjE1OTQxNjYzOTl9'>
-	<meta name='apple-mobile-web-app-capable' content='yes'>
-
-	<title>OBS-web</title>
-
-	<link rel='icon' type='image/png' href='favicon.png'>
-	<link rel='stylesheet' href='bundle-v9f140ca.css'>
-  <link rel='manifest' href='manifest.json'>
-	<script defer src='bundle-v9f140ca.js'></script>
+    <title>OBS Image Switcher</title>
 </head>
-
 <body>
+    <!-- 用于OBS展示的目标图片 -->
+    <img src="default_image.jpg" id="obsImage">
+
+    <!-- 点击其他图片触发切换目标图片 -->
+    <img src="image1.jpg" id="image1" onclick="changeImage('image1')">
+    <img src="image2.jpg" id="image2" onclick="changeImage('image2')">
+    <!-- 添加更多图片和相应的ID和点击事件 -->
 </body>
 </html>
