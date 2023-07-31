@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Image Viewer</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click on the images to view the selected image:</h1>
+    <div id="imageGallery">
+        <img src="d.png" onclick="showImage('d.png')">
+        <img src="f.png" onclick="showImage('f.png')">
+        <!-- Add more images here with unique paths -->
+    </div>
+    <div id="selectedImageContainer" style="display: none;">
+        <h2>Selected Image:</h2>
+        <img id="selectedImage" src="" alt="Selected Image">
+    </div>
+
+    <script>
+        function showImage(imagePath) {
+            const selectedImageContainer = document.getElementById('selectedImageContainer');
+            const selectedImage = document.getElementById('selectedImage');
+
+            selectedImage.src = imagePath;
+            selectedImageContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
