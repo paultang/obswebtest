@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Image Viewer</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selected Image:</h1>
+    <div id="selectedImageContainer">
+        <img id="selectedImage" src="" alt="Selected Image">
+    </div>
+
+    <script>
+        // 获取localStorage中选中的图片路径
+        function getSelectedImage() {
+            return localStorage.getItem('selectedImage');
+        }
+
+        // 显示选中的图片
+        function showSelectedImage() {
+            const selectedImageContainer = document.getElementById('selectedImageContainer');
+            const selectedImage = document.getElementById('selectedImage');
+            const imagePath = getSelectedImage();
+
+            if (imagePath) {
+                selectedImage.src = imagePath;
+                selectedImageContainer.style.display = 'block';
+            }
+        }
+
+        // 在页面加载时调用函数，以显示选中的图片
+        window.onload = showSelectedImage;
+    </script>
+</body>
+</html>
