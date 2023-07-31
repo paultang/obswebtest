@@ -16,17 +16,16 @@
     </div>
 
     <script>
-        // 获取URL参数并解析出图片路径
-        function getParameterByName(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
+        // 获取localStorage中选中的图片路径
+        function getSelectedImage() {
+            return localStorage.getItem('selectedImage');
         }
 
         // 显示选中的图片
         function showSelectedImage() {
             const selectedImageContainer = document.getElementById('selectedImageContainer');
             const selectedImage = document.getElementById('selectedImage');
-            const imagePath = getParameterByName('image');
+            const imagePath = getSelectedImage();
 
             if (imagePath) {
                 selectedImage.src = imagePath;
