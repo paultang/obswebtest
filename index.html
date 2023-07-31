@@ -11,10 +11,13 @@
         <!-- Add more images here with unique paths -->
     </div>
 
-    <script>
+ <script>
         function selectImage(imagePath) {
             // 存储选中的图片路径到localStorage
             localStorage.setItem('selectedImage', imagePath);
+
+            // 发送消息到selected.html
+            window.postMessage({ type: 'selectedImageChanged', imagePath }, '*');
         }
     </script>
 </body>
