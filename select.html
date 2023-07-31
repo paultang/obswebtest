@@ -33,14 +33,6 @@
             }
         }
 
-        // 监听来自index.html的消息
-        window.addEventListener('message', function(event) {
-            if (event.data && event.data.type === 'selectedImageChanged') {
-                // 收到消息后刷新页面
-                showSelectedImage();
-            }
-        });
-
         // 在页面加载时调用函数，以显示选中的图片
         window.onload = showSelectedImage;
     </script>
