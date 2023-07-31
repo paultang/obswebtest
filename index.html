@@ -6,18 +6,18 @@
 <body>
     <h1>Click on the images to view the selected image:</h1>
     <div id="imageGallery">
-        <img src="d.png" onclick="selectImage('d.png')">
-        <img src="f.png" onclick="selectImage('f.png')">
+        <img src="image1.jpg" onclick="selectImage('image1.jpg')">
+        <img src="image2.jpg" onclick="selectImage('image2.jpg')">
         <!-- Add more images here with unique paths -->
     </div>
 
- <script>
+    <script>
         function selectImage(imagePath) {
             // 存储选中的图片路径到localStorage
             localStorage.setItem('selectedImage', imagePath);
 
-            // 发送消息到selected.html
-            window.postMessage({ type: 'selectedImageChanged', imagePath }, '*');
+            // 在当前页面打开selected.html
+            window.open('selected.html', '_blank');
         }
     </script>
 </body>
