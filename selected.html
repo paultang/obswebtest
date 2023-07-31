@@ -8,7 +8,13 @@
             height: auto;
         }
     </style>
+    <script>
+        // 在head中生成随机数，以确保每次页面加载时都有新的内容
+        var randomNum = Math.random();
+        document.write('<link rel="stylesheet" href="selected.css?v=' + randomNum + '">');
+    </script>
 </head>
+
 <body>
     <h1>Selected Image:</h1>
     <div id="selectedImageContainer">
