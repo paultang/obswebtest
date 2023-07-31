@@ -1,31 +1,21 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>OBS Image Switcher</title>
+    <title>Image Selection Page</title>
 </head>
 <body>
-    <!-- 用于OBS展示的目标图片 -->
-    <img src="f.png" id="selectedImage">
+    <h1>Click on the images to view the selected image:</h1>
+    <div id="imageGallery">
+        <img src="d.png" onclick="selectImage('d.png')">
+        <img src="f.png" onclick="selectImage('f.png')">
+        <!-- Add more images here with unique paths -->
+    </div>
 
-    <!-- 点击其他图片触发切换目标图片 -->
-    <img src="d.png" id="image1" onclick="changeImage('image1')">
-    <img src="e.png" id="image2" onclick="changeImage('image2')">
-    <!-- 添加更多图片和相应的ID和点击事件 -->
-<script>
-    function changeImage(imageId) {
-        // 获取OBS展示的目标图片元素
-        const obsImageElement = document.getElementById('selectedImage');
-
-        // 获取点击的图片元素
-        const clickedImageElement = document.getElementById(imageId);
-
-        // 获取点击的图片路径
-        const imagePath = clickedImageElement.getAttribute('src');
-
-        // 更新OBS展示的目标图片路径
-        obsImageElement.setAttribute('src', imagePath);
-    }
-</script>
-
-
+    <script>
+        function selectImage(imagePath) {
+            // 存储选中的图片路径到localStorage
+            localStorage.setItem('selectedImage', imagePath);
+        }
+    </script>
 </body>
 </html>
