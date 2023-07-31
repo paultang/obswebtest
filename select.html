@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Image Viewer</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selected Image:</h1>
+    <div id="selectedImageContainer">
+        <img id="selectedImage" src="" alt="Selected Image">
+    </div>
+
+    <script>
+        // 获取URL参数并解析出图片路径
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // 显示选中的图片
+        function showSelectedImage() {
+            const selectedImageContainer = document.getElementById('selectedImageContainer');
+            const selectedImage = document.getElementById('selectedImage');
+            const imagePath = getParameterByName('image');
+
+            if (imagePath) {
+                selectedImage.src = imagePath;
+                selectedImageContainer.style.display = 'block';
+            }
+        }
+
+        // 在页面加载时调用函数，以显示选中的图片
+        window.onload = showSelectedImage;
+    </script>
+</body>
+</html>
